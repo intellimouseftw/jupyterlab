@@ -129,10 +129,10 @@ all of MD as it is not optimized for dense, information rich UIs.
    */
 
 
-  --jp-ui-inverse-font-color0: rgba(0, 0, 0, 1);
-  --jp-ui-inverse-font-color1: rgba(0, 0, 0, 0.8);
-  --jp-ui-inverse-font-color2: rgba(0, 0, 0, 0.5);
-  --jp-ui-inverse-font-color3: rgba(0, 0, 0, 0.3);
+  --jp-ui-inverse-font-color0: rgba(255, 255, 255, 1);
+  --jp-ui-inverse-font-color1: rgba(255, 255, 255, 0.87);
+  --jp-ui-inverse-font-color2: rgba(255, 255, 255, 0.54);
+  --jp-ui-inverse-font-color3: rgba(255, 255, 255, 0.38);
   /* Content Fonts
    *
    * Content font variables are used for typography of user generated content.
@@ -181,7 +181,7 @@ all of MD as it is not optimized for dense, information rich UIs.
   --jp-code-line-height: 1.3077; /* 17px for 13px base */
   --jp-code-padding: 0.385em; /* 5px for 13px base */
   
-  --jp-code-font-family-default: 'Fira Code', monospace;
+  --jp-code-font-family-default: Menlo, monospace;
   --jp-code-font-family: var(--jp-code-font-family-default);
 
   /* This gives a magnification of about 125% in presentation mode over normal. */
@@ -200,9 +200,9 @@ all of MD as it is not optimized for dense, information rich UIs.
    * theme these would go from light to dark.
    */
 
-  --jp-layout-color0: #0E1419;
+  --jp-layout-color0: #21222C;
   --jp-layout-color1: #282a36;
-  --jp-layout-color2: #253340;
+  --jp-layout-color2: #21222C;
   --jp-layout-color3: #282a36;
   --jp-layout-color4: #253340;
   /* Inverse Layout
@@ -219,8 +219,8 @@ all of MD as it is not optimized for dense, information rich UIs.
 
   /* Brand/accent */
 
-  --jp-brand-color0: #282a36;
-  --jp-brand-color1: #574473;
+  --jp-brand-color0: #2196F3;
+  --jp-brand-color1: #6272A4;
   --jp-brand-color2: var(--md-blue-300);
   --jp-brand-color3: var(--md-blue-100);
   --jp-brand-color4: var(--md-blue-50);                                  
@@ -267,7 +267,7 @@ all of MD as it is not optimized for dense, information rich UIs.
   --jp-cell-editor-active-border-color: #574473;
 
   --jp-cell-prompt-width: 64px;
-  --jp-cell-prompt-font-family: 'Fira Code', monospace;
+  --jp-cell-prompt-font-family: Menlo, monospace;
   --jp-cell-prompt-letter-spacing: 0px;
   --jp-cell-prompt-opacity: 1;
   --jp-cell-prompt-not-active-opacity: 1;
@@ -318,6 +318,10 @@ all of MD as it is not optimized for dense, information rich UIs.
   --jp-toolbar-box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.8);
   --jp-toolbar-header-margin: 4px 4px 0px 4px;
   --jp-toolbar-active-background: var(--jp-layout-color0);
+    
+  /* Statusbar specific styles */
+
+  --jp-statusbar-height: 24px;
 
   /* Input field styles */
 
@@ -339,17 +343,17 @@ all of MD as it is not optimized for dense, information rich UIs.
   --jp-mirror-editor-keyword-color: #ff79c6;
   --jp-mirror-editor-atom-color: #bd93f9;
   --jp-mirror-editor-number-color: #BD93F9;
-  --jp-mirror-editor-def-color: #ffb86c;
-  --jp-mirror-editor-variable-color: #50fa7b;
-  --jp-mirror-editor-variable-2-color: #FFFFFF;
+  --jp-mirror-editor-def-color: #50fa7b;
+  --jp-mirror-editor-variable-color: #FFFFFF;
+  --jp-mirror-editor-variable-2-color: #BD93F9;
   --jp-mirror-editor-variable-3-color: #50fa7b;
   --jp-mirror-editor-punctuation-color: #FFFFFF;
-  --jp-mirror-editor-property-color: #FF79C6;
+  --jp-mirror-editor-property-color: #50fa7b;
   --jp-mirror-editor-operator-color: #FF79C6;
   --jp-mirror-editor-comment-color: #6272A4;
   --jp-mirror-editor-string-color: #F1FA8C;
   --jp-mirror-editor-string-2-color: #F1FA8C;
-  --jp-mirror-editor-meta-color: #aa22ff;
+  --jp-mirror-editor-meta-color: #8BE9FD;
   --jp-mirror-editor-qualifier-color: #50fa7b;
   --jp-mirror-editor-builtin-color: #50fa7b;
   --jp-mirror-editor-bracket-color: #FFFFFF;
@@ -399,3 +403,29 @@ all of MD as it is not optimized for dense, information rich UIs.
   --jp-icon-contrast-color2: var(--md-pink-600);
   --jp-icon-contrast-color3: var(--md-blue-600);                             
 }
+
+@font-face {
+    font-family: 'Fira Code';
+    src: './fonts/FiraCode-Regular.ttf' format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Fira Code';
+    src: './fonts/FiraCode-Bold.ttf' format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+/* Set the default typography for monospace elements */
+tt,
+code,
+kbd,
+samp,
+pre {
+  font-family: var(--jp-code-font-family);
+  font-size: var(--jp-code-font-size);
+  line-height: var(--jp-code-line-height);
+}
+
+
